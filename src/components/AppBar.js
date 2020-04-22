@@ -27,8 +27,8 @@ export default function AppHeader(props) {
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton> */}
-          <Typography variant="h6" >
-            Top Movies for Dimpy
+          <Typography variant="h6" className="movie-title">
+            Top Movies
           </Typography>
           <form onSubmit={search}>
            <input type="search" placeholder="Search" onChange={searchTextChanged}></input>

@@ -14,7 +14,6 @@ class App extends React.Component {
     console.log("search", e.target.value);
   }
   searchTextChanged = async (e) => {
-    //if (this.state) {
       this.setState({ searchText: e.target.value });
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=e7cd2b3e9a7681f1cebd652523102c58&query=${this.state.searchText}`
@@ -22,17 +21,8 @@ class App extends React.Component {
 
       const json = await response.json();
       if(json.results)
-      this.setState({ movie: json.results });
-      // if(json.results)
-      // {
-      //   console.log("inside");
-      //   debugger
-      
-      // console.log(this.state)
-      // }
-    //}
+      this.setState({ movie: json.results });  
   }
-  // console.log("state",this.state);
 clearmovie = () => { this.setState({ selectedMovie: null }) };
 async componentDidMount() {
   let response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=e7cd2b3e9a7681f1cebd652523102c58&language=en-US&page=1`)
